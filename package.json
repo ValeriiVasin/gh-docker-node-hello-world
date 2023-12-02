@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node dist/app",
     "build": "tsc",
+    "docker:build": "docker build -t $(node -p \"require('./package.json').name\"):latest .",
+    "docker:run": "docker run -p 3000:3000 -d $(node -p \"require('./package.json').name\"):latest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
